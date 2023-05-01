@@ -52,6 +52,7 @@ XX-Large devices (larger desktops, 1400px and up)
 */
 body {
     display: grid;
+    grid-template-rows: 200px 50px auto auto 250px;
     grid-template-areas:
         "header"
         "navbar"
@@ -63,6 +64,10 @@ body {
 header {
     grid-area: header;
     background: lightskyblue;
+    background: url("/assets/images/fondo.jpg") #000;
+    background-position-y: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -84,7 +89,7 @@ footer {
     grid-area: footer;
     background: rgb(55, 90, 140);
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-content: center;
 }
@@ -103,6 +108,10 @@ footer>section>p {
     padding-bottom: 10px;
 }
 
+footer>section>p:last-child {
+    padding-bottom: 0;
+}
+
 footer>section>p::first-letter {
     text-transform: capitalize;
 }
@@ -118,23 +127,24 @@ footer>section>ul {
     gap: 20px;
 }
 
-.footer-contact>p{
+.footer-contact>p {
     font-size: 1.2rem;
 }
 
-.footer-network{
+.footer-network {
     font-size: 1.2rem;
 }
 
-.footer-legal{
+.footer-legal {
     font-size: small;
     color: rgba(255, 255, 255, 0.302);
+    margin: 0;
 }
 
 @media (min-width: 768px) {
     body {
         grid-template-columns: 200px auto;
-        grid-template-rows: 100px 50px auto auto;
+        grid-template-rows: 200px 50px auto 140px;
         grid-template-areas:
             "header     header"
             "navbar     navbar"
@@ -142,7 +152,16 @@ footer>section>ul {
             "footer     footer";
     }
 
-    footer{
+    footer {
         flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    .footer-contact{
+        width: 50%;
+    }
+
+    .footer-network{
+        width: 50%;
     }
 }
