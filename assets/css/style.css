@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/*  normalize   */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+* {
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    text-decoration: none;
+    color: #222;
+}
+
+ol,
+ul {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: rgb(206, 255, 57);
+    font-weight: bold;
+}
+
+/*  grid
+
+Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) { ... }
+*/
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "navbar"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    background: lightskyblue;
+}
+
+nav {
+    grid-area: navbar;
+    background: lightseagreen;
+}
+
+main {
+    grid-area: main;
+    background: #fff;
+}
+
+aside {
+    grid-area: sidebar;
+    background: lightcyan;
+}
+
+footer {
+    grid-area: footer;
+    background: rgb(55, 90, 140);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+footer>section {
+    padding-bottom: 20px;
+}
+
+footer>section:last-child {
+    padding-bottom: 0;
+}
+
+footer>section>p {
+    text-align: center;
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+footer>section>p::first-letter {
+    text-transform: capitalize;
+}
+
+footer>section>ul {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-network>ul {
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.footer-contact>p{
+    font-size: 1.2rem;
+}
+
+.footer-network{
+    font-size: 1.2rem;
+}
+
+.footer-legal{
+    font-size: small;
+    color: rgba(255, 255, 255, 0.302);
+}
+
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto auto;
+        grid-template-areas:
+            "header     header"
+            "navbar     navbar"
+            "sidebar    main"
+            "footer     footer";
+    }
+
+    footer{
+        flex-flow: row wrap;
+    }
+}
