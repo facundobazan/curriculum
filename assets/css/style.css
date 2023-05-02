@@ -64,7 +64,7 @@ body {
 header {
     grid-area: header;
     background: lightskyblue;
-    background: url("/assets/images/fondo.jpg") #000;
+    background: url("/assets/images/fondo.jpg");
     background-position-y: 70%;
     background-repeat: no-repeat;
     background-size: cover;
